@@ -69,8 +69,11 @@ for(let link of links){
 
     const articles = document.querySelectorAll(optArticleSelector);
 
+    let html = '';
+
     for(let article of articles){
     }
+
 
     /* get the article id */
 
