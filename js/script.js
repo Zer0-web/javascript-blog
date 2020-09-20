@@ -70,7 +70,6 @@ for(let link of links){
     const articles = document.querySelectorAll(optArticleSelector);
 
     for(let article of articles){
-      article.addAttribute();
     }
 
     /* get the article id */
@@ -84,9 +83,10 @@ for(let link of links){
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
     console.log('linkHTML: ', linkHTML);
     /* insert link into titleList */
-    titleList.innerHTML = titleList.innerHTML + linkHTML;
+    html = html + linkHTML;
   }
 
-generateTitleLinks();
-
+  titleList.innerHTML = html;
 }
+
+generateTitleLinks();
