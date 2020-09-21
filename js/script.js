@@ -93,5 +93,5 @@ const links = document.querySelectorAll('.titles a');
 console.log('link: ', links);
 
 for(let link of links){
-    link.addEventListener('click', titleClickHandler);
+   link.addEventListener('click', titleClickHandler);
 }
