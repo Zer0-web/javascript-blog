@@ -55,7 +55,7 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list';
 
-function generateTitleLinks(){
+function generateTitleLinks(customSelector = ''){
     
   /* remove contents of titleList */
 
@@ -64,8 +64,8 @@ function generateTitleLinks(){
 
   /* for each article */
 
-  const articles = document.querySelectorAll(optArticleSelector);
-
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
+  
   let html = '';
 
   for(let article of articles){
@@ -174,12 +174,48 @@ function tagClickHandler(event){
 
 function addClickListenersToTags(){
   /* find all links to tags */
-
+  const tagLinks = document.querySelectorAll('[href^="#tag="]');
+  console.log('tagsLinks: ', tagLinks);
   /* START LOOP: for each link */
-
+  for(const link of tagLinks){
   /* add tagClickHandler as event listener for that link */
-
+    link.addEventListener('click', tagClickHandler);
   /* END LOOP: for each link */
+  }
 }
 
 addClickListenersToTags();
+
+function authorClickHandler(event) { 
+  event.preventDefault();
+  const clickedElement = this;
+  const href = clickedElement.getAttribute('href');
+  const author = href.replace('#author-', '');
+  const authorsActiveLinks = document.querySelectorAll('a[href^="#author-"]');
+  for (const authorActiveLinks of authorsActiveLinks) {
+    authorActiveLinks.classList.remove('active');
+  }
+  const authorsLinks = document.querySelectorAll('a[href="' + href + '"]');
+  for (const authorLinks of authorsLinks) {
+    authorLinks.classList.add('active');
+    /* END LOOP: for each found tag link */
+  }
+  /* execute function "generateTitleLinks" with article selector as argument */
+  const customSelector = '[data-author="' + author.replace('#', '') + '"]';
+  generateTitleLinks(customSelector);
+  console.log('customSelector: ', customSelector);
+}
+
+function addClickListenersToAuthors() {
+  /* [DONE] find all links to authors */
+  const authorLinks = document.querySelectorAll('.post-author a');
+  console.log('authorLinks: ', authorLinks);
+
+  /* START LOOP: for each link */
+  for (const link of authorLinks) {
+    /* [DONE] add authorClickHandler as event listener for that link */
+    link.addEventListener('click', authorClickHandler); //wywołanie po kliknieciu
+    /* END LOOP: for each link */
+  }
+}
+addClickListenersToAuthors();
