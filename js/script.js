@@ -4,6 +4,9 @@
     const links = document.querySelectorAll('.titles a');
     console.log('links:', links);
 });*/
+const templates = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+}
 
 const titleClickHandler = function(event){
   event.preventDefault();
@@ -81,7 +84,8 @@ function generateTitleLinks(customSelector = ''){
     /* get the title from the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     /* create HTML of the link */
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    const linkHTMLData = {id: articleId, title: articleTitle};
+    const linkHTML = templates.articleLink(linkHTMLData);
     console.log('linkHTML: ', linkHTML);
     /* insert link into titleList */
     html = html + linkHTML;
@@ -241,19 +245,41 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
-function generateAuthors() {
-  /* find all authors */
-  const authors = document.querySelectorAll(optArticleAuthorSelector);
-  for (const author of authors) {
-    // const authorList = author.innerHTML;
-    // let html = '';
-    const articleAuthor = author.getAttribute('data-author');
-    console.log('articleAuthor: ', articleAuthor);
-    const authorElement = document.createElement('a');
-    authorElement.setAttribute('href', `#${articleAuthor}`);
-    authorElement.innerText = articleAuthor;
-    author.appendChild(authorElement);
-  }
+function generateAuthors(){
+const articles = document.querySelectorAll('article');
+//zapisujemy najpierw do zmiennej wszystkie artykuły
+ 
+/* START LOOP: for each articles */
+ 
+for(let article of articles){
+//tworzymy pętle która przechodzi po wszystkich artykułach
+ 
+	/* find author container on every article variable */ 
+ 
+	const authorsContainer = article.querySelector(optArticleAuthorSelector);
+	//wyłapujemy w HTML miejsce w którym w pojedynczym artykule jest info o autorze "by X"
+	//musisz zrobić sobie zmienną optArticleAuthorSelector z wartością .post-author
+ 
+	let html = '';
+ 
+    	/* find author on every article */
+ 
+      const author = article.getAttribute('post-author');
+      console.log(author);
+	//przypisujemy do zmiennej autora aktualnego pojedynczego artykułu
+ 
+	const linkHTML = '<a href="#' + author + '">' + author + '</a>';
+	//tutaj musisz stworzyć kod HTML który będzie wypisywał autora - analogicznie jak z tagiem było (musi to być link)
+ 
+    	html = html + linkHTML;
+	//wpisujemy nasz kod do zmiennej pomocniczej którą zadeklarowaliśmy wyżej
+ 
+    	authorsContainer.innerHTML = html;
+	//wstawiamy nasz kod w odpowiedni div
+
+//zamykamy pętle
+}
+//zamykamy funkcje
 }
 generateAuthors();
 
