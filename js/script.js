@@ -133,11 +133,9 @@ function generateTags(){
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
 
-  let html = '';
-
   for(let article of articles){
   /* START LOOP: for every article: */
-
+  let html = '';
     /* find tags wrapper */
     const titleList = article.querySelector(optArticleTagsSelector);
     titleList.innerHTML = '';
@@ -186,7 +184,7 @@ function generateTags(){
   /* [NEW] START LOOP: for each tag in allTags: */
   for(let tag in allTags){
   /* [NEW] generate code of a link and add it to allTagsHTML */
-    const tagLinkHTML = '<li><a href="#tag-' + tag + '" class="' + optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '</a></li>';
+  const tagLinkHTML = '<li><a href="#tag-' + tag + '" class="' + optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '(' + calculateTagClass(allTags[tag], tagsParams) + ')' + '</a></li>';
     console.log('tagLinkHTML:', tagLinkHTML);
     allTagsHTML += tagLinkHTML;
   }
