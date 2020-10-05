@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <title>My first page in JS</title>
-      <link rel="stylesheet" href="css/style.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">	
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
     <div class="blog">
         <div class="container">
           <h1 class="logo">my blog</h1>
@@ -14,25 +14,25 @@
             <aside class="sidebar">
               <h2 class="section-title">All posts</h2>
               <ul class="list titles">
-                <!--<a href="#article-1" class="active"><span>Article 1</span></a>
-                <a href="#article-2"><span>Article 2</span></a>
-                <a href="#article-3"><span>Article 3</span></a>
-                <a href="#article-4"><span>Article 4</span></a>
-                <a href="#article-5"><span>Article 5</span></a>
-                <a href="#article-6"><span>Article 6</span></a>
-                <a href="#article-7"><span>Article 7</span></a>
-                <a href="#article-8"><span>Article 8</span></a>
-                <a href="#article-9"><span>Article 9</span></a>
-                <a href="#article-10"><span>Article 10</span></a> -->
+                <li><a href="#article-1" class="active"><span>Article 1</span></a></li>
+                <li><a href="#article-2"><span>Artficle 2</span></a></li>
+                <li><a href="#article-3"><span>Article 3</span></a></li>
+                <li><a href="#article-4"><span>Article 4</span></a></li>
+                <li><a href="#article-5"><span>Article 5</span></a></li>
+                <li><a href="#article-6"><span>Article 6</span></a></li>
+                <li><a href="#article-7"><span>Article 7</span></a></li>
+                <li><a href="#article-8"><span>Article 8</span></a></li>
+                <li><a href="#article-9"><span>Article 9</span></a></li>
+                <li><a href="#article-10"><span>Article 10</span></a></li>
               </ul>
             </aside>
             <section class="posts">
-              <article class="post active" post-author="Mateusz Rozenkiewicz" id="article-1" data-tags="cat cactus scissors">
+              <article class="post active" id="article-1" data-tags="cat cactus scissors" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 1</h3>
-                <p class="post-author">by Marion Berry</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Duis non dolor efficitur erat interdum fringilla a lobortis dolor. Aenean in massa viverra, pretium augue et, imperdiet diam. Proin varius vitae lectus ut suscipit. Etiam metus lacus, molestie at ante eget, gravida tristique metus. Morbi finibus elit mi, ut aliquam libero tempor eu.</p>
-                  
+
                   <p>Curabitur a arcu ut nunc ornare tempor. Vestibulum et augue purus. Sed mattis auctor iaculis. Duis placerat tempus nisl, et commodo sem varius sed. Ut ac ultrices leo. Aliquam efficitur augue a scelerisque lacinia. Donec sit amet justo lacus.</p>
                   
                   <p>Duis tincidunt tellus non lorem molestie lobortis. Ut nec mauris consectetur, convallis nisl vel, venenatis magna. Sed efficitur egestas purus, eu fermentum leo sodales in.</p>      
@@ -40,12 +40,14 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">design</a></li>
+                    <li><a href="#">tutorials</a></li>
                   </ul>
                 </div>
               </article>        
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-2" data-tags="dog bone tail">
+              <article class="post" id="article-2" data-tags="dog bone tail" data-author="Steaven Sigal">
                 <h3 class="post-title">Article 2</h3>
-                <p class="post-author">by Theo Tabby</p>
+                <p class="post-author">by Steaven Sigal</p>
                 <div class="post-content">
                   <p>Phasellus sollicitudin, arcu vel iaculis ullamcorper, quam leo viverra orci, et faucibus quam sapien vel est. Maecenas ac suscipit elit. Nullam interdum, lorem vitae venenatis pulvinar, ex dui malesuada nunc, tempus cursus enim metus vel nulla.</p>
                   
@@ -56,12 +58,14 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">code</a></li>
                   </ul>
                 </div>
               </article>        
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-3" data-tags="fish scale water">
+              <article class="post" id="article-3" data-tags="fish scale water" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 3</h3>
-                <p class="post-author">by George Tuxedo</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Mauris vel pellentesque turpis, ac sodales nisl. Quisque iaculis mi velit, ut convallis tellus accumsan a. Quisque iaculis, nisi et dignissim tincidunt, nisl eros euismod nulla, finibus laoreet erat enim posuere elit.</p>
                   
@@ -71,12 +75,15 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">reviews</a></li>
+                    <li><a href="#">design</a></li>
                   </ul>
                 </div>
               </article>        
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-4" data-tags="pc internet">
+              <article class="post" id="article-4" data-tags="pc internet" data-author="Rocky Balboa">
                 <h3 class="post-title">Article 4</h3>
-                <p class="post-author">by Kitty Toebean</p>
+                <p class="post-author">by Rocky Balboa</p>
                 <div class="post-content">
                   <p>Morbi vel cursus nulla, vel varius mauris. Suspendisse sed elit sit amet risus faucibus vestibulum ut sit amet purus. Donec orci est, condimentum ut quam quis, scelerisque fringilla ligula.</p>
                   
@@ -87,12 +94,15 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">tutorials</a></li>
+                    <li><a href="#">code</a></li>
+                    <li><a href="#">design</a></li>
                   </ul>
                 </div>
               </article>
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-5" data-tags="knifes joker ">
+              <article class="post" id="article-5" data-tags="knifes joker" data-author="The Joker">
                 <h3 class="post-title">Article 5</h3>
-                <p class="post-author">by Marion Berry</p>
+                <p class="post-author">by The Joker</p>
                 <div class="post-content">
                   <p>Suspendisse sem eros, euismod condimentum arcu ac, consequat fermentum orci. Nam convallis lacus nec interdum vestibulum. Vestibulum luctus, quam eu tristique ornare, lorem nibh sodales enim, vitae tempor dolor ante vitae tortor.</p>
                   
@@ -103,12 +113,14 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">design</a></li>
+                    <li><a href="#">reviews</a></li>
                   </ul>
                 </div>
               </article>        
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-6" data-tags="wepons bullet">
+              <article class="post" id="article-6" data-tags="bullet guns" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 6</h3>
-                <p class="post-author">by George Tuxedo</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Donec posuere iaculis ante sed hendrerit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit neque nec urna tincidunt, quis vehicula dui vulputate. Morbi est sapien, auctor ut lectus eu, placerat viverra lorem.</p>
                   
@@ -119,12 +131,14 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">reviews</a></li>
+                    <li><a href="#">code</a></li>
                   </ul>
                 </div>
               </article>
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-7" data-tags="knifes guns">
+              <article class="post" id="article-7" data-tags="knifes guns" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 7</h3>
-                <p class="post-author">by Kitty Toebean</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Donec eleifend mauris ac nisl fermentum, ac fermentum turpis dignissim. Aliquam diam nisl, imperdiet a varius eget, lobortis sed nisi. Nullam suscipit ipsum sed magna blandit, sed pellentesque urna malesuada.</p>
                   
@@ -135,12 +149,14 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">code</a></li>
+                    <li><a href="#">news</a></li>
                   </ul>
                 </div>
               </article>
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-8" data-tags="tortilla kebab">
+              <article class="post" id="article-8" data-tags="tortilla kebab" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 8</h3>
-                <p class="post-author">by Theo Tabby</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Praesent quis imperdiet erat. Curabitur tempor sapien a interdum malesuada. Proin libero erat, sagittis a sollicitudin eget, pulvinar nec risus. Cras et suscipit sem.</p>
                   
@@ -151,12 +167,15 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">design</a></li>
+                    <li><a href="#">tutorials</a></li>
                   </ul>
                 </div>
               </article>
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-9" data-tags="food organic">
+              <article class="post" id="article-9" data-tags="food organic" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 9</h3>
-                <p class="post-author">by Marion Berry</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Tam et facilisis purus. Donec vulputate est quis lobortis posuere. Nunc vitae lorem ut odio faucibus pulvinar nec in justo. Ut ut ante ac tellus ornare tempus. Nunc maximus, tortor et dictum convallis, nunc libero posuere leo, scelerisque ultrices arcu sapien ut tellus.</p>
                   
@@ -167,12 +186,14 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">tutorials</a></li>
                   </ul>
                 </div>
               </article>
-              <article class="post" post-author="Mateusz Rozenkiewicz" id="article-10" data-tags="finish who">
+              <article class="post" id="article-10" data-tags="finish who" data-author="Mateusz Rozenkiewicz">
                 <h3 class="post-title">Article 10</h3>
-                <p class="post-author">by George Tuxedo</p>
+                <p class="post-author">by Mateusz Rozenkiewicz</p>
                 <div class="post-content">
                   <p>Aliquam erat volutpat. Ut non eleifend lectus. Donec suscipit tellus tempor, ornare dui id, hendrerit neque. Phasellus lacinia laoreet dui in luctus. Sed hendrerit, magna sit amet varius tempor, augue augue scelerisque est, non scelerisque mauris libero eu sapien.</p>
                   
@@ -183,6 +204,10 @@
                 <div class="post-tags">
                   <p><strong>Tags:</strong></p>
                   <ul class="list list-horizontal">
+                    <li><a href="#">code</a></li>
+                    <li><a href="#">design</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">reviews</a></li>
                   </ul>
                 </div>
               </article>
@@ -190,14 +215,14 @@
             <aside class="sidebar">
               <h2 class="section-title">Tags</h2>
               <ul class="list tags">
-                <!-- <li><a href="#">design</a> <span>(6)</span></li>
+                <li><a href="#">design</a> <span>(6)</span></li>
                 <li><a href="#">code</a> <span>(5)</span></li>
                 <li><a href="#">tutorials</a> <span>(4)</span></li>
                 <li><a href="#">reviews</a> <span>(4)</span></li>
-                <li><a href="#">news</a> <span>(6)</span></li> -->
+                <li><a href="#">news</a> <span>(6)</span></li>
               </ul>
               <h2 class="section-title">Authors</h2>
-              <!--<ul class="list authors">
+              <ul class="list authors">
                 <li>
                   <a href="#">
                     <span class="author-name">Kitty Toebean</span>
@@ -217,8 +242,8 @@
                   <a href="#">
                     <span class="author-name">Marion Berry</span>
                   </a>
-                </li> 
-              </ul> -->
+                </li>
+              </ul>
             </aside>
           </main>
         </div>
@@ -227,17 +252,23 @@
         <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
       </script>
       <script id="template-tag-link" type="text/x-handlebars-template">
-        <li><a href="#tag-{{ id }}"><span>{{ id }}</span></a></li>
+        <li><a href="#tag-{{ id }}"><span>{{ title }}</span></a></li>
       </script>
       <script id="template-author-link" type="text/x-handlebars-template">
-        <li><a href="#author-{{ id }}"><span>{{ id }}</span></a></li>
+        <a href="#{{ id }}"><span>{{ title }}</span></a>
       </script>
-      <script id="template-tagCloud-link" type="text/x-handlebars-template">
+      <script id="template-tag-cloud-link" type="text/x-handlebars-template">
         {{#each tags}}
-        <li><a href="#tag-{{ tag }}" class="tag-size-{{className}}">{{tag}}({{count}})</a></li>
+        <li><a href="#tag-{{tag}}" class="{{className}}">{{ tag }}</a></li>
         {{/each}}
       </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-      <script src="js/script.js"></script>
-  </body>
+      <script id="template-author-list-link" type="text/x-handlebars-template">
+        {{#each authors}}
+        <li><a href="#{{author}}" class="{{className}}">{{author}}</a></li>
+        {{/each}}
+      </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+<script src="js/script.js">
+</script>
+</body>
 </html>
