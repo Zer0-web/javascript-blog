@@ -6,6 +6,8 @@
 });*/
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+  articleTag: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML)
+  articleAuthor: Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
 }
 
 const titleClickHandler = function(event){
@@ -151,7 +153,8 @@ function generateTags(){
     for(let tag of articleTagsArray){
       console.log('tag: ', tag);
       /* generate HTML of the link */
-      const linkHTML = '<li><a href="#' + tag + '">' + tag + '</a></li>';
+      const linkHTMLData = {id: tagId, title: tagTitle};
+      const linkHTML = templates.articleTag(linkHTMLData);
       console.log('linkHTML: ', linkHTML);
       html = html + linkHTML;
       /* add generated code to html variable */
@@ -266,7 +269,8 @@ for(let article of articles){
       console.log(author);
 	//przypisujemy do zmiennej autora aktualnego pojedynczego artykułu
  
-	const linkHTML = '<a href="#' + author + '">' + author + '</a>';
+	const linkHTMLData = {id: authorId, title: authorTitle};
+  const linkHTML = templates.articleAuthor(linkHTMLData);
 	//tutaj musisz stworzyć kod HTML który będzie wypisywał autora - analogicznie jak z tagiem było (musi to być link)
  
     	html = html + linkHTML;
