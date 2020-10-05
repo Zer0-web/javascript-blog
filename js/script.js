@@ -5,10 +5,10 @@
     console.log('links:', links);
 });*/
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
-  articleTag: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML)
-  articleAuthor: Handlebars.compile(document.querySelector('#template-author-link').innerHTML)
-  tagCloudLink: Handlebars.compile(document.querySelector('#template-tagClound-link').innerHTML)
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  articleTag: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  articleAuthor: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
+  tagCloudLink: Handlebars.compile(document.querySelector('#template-tagCloud-link').innerHTML),
 }
 
 const titleClickHandler = function(event){
@@ -154,7 +154,7 @@ function generateTags(){
     for(let tag of articleTagsArray){
       console.log('tag: ', tag);
       /* generate HTML of the link */
-      const linkHTMLData = {id: tagId, title: tagTitle};
+      const linkHTMLData = {id: tag};
       const linkHTML = templates.articleTag(linkHTMLData);
       console.log('linkHTML: ', linkHTML);
       html = html + linkHTML;
@@ -183,14 +183,16 @@ function generateTags(){
   /* [NEW] create variable for all links HTML code */
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams: ', tagsParams);
-  let allTagsHTML = {tags: []};
+  let allTagsData = {tags: []};
 
   /* [NEW] START LOOP: for each tag in allTags: */
   for(let tag in allTags){
   /* [NEW] generate code of a link and add it to allTagsHTML */
-  const tagLinkHTML = '<li><a href="#tag-' + tag + '" class="' + optCloudClassPrefix + calculateTagClass(allTags[tag], tagsParams) + '">' + tag + '(' + calculateTagClass(allTags[tag], tagsParams) + ')' + '</a></li>';
-    console.log('tagLinkHTML:', tagLinkHTML);
-    allTagsHTML += tagLinkHTML;
+    allTagsData.tags.push({
+      tag: tag,
+      count: allTags[tag],
+      className:calculateTagClass(allTags[tag], tagsParams),
+    });
   }
   /* [NEW] END LOOP: for each tag in allTags: */
 
@@ -271,7 +273,7 @@ for(let article of articles){
       console.log(author);
 	//przypisujemy do zmiennej autora aktualnego pojedynczego artykułu
  
-	const linkHTMLData = {id: authorId, title: authorTitle};
+	const linkHTMLData = {id: author};
   const linkHTML = templates.articleAuthor(linkHTMLData);
 	//tutaj musisz stworzyć kod HTML który będzie wypisywał autora - analogicznie jak z tagiem było (musi to być link)
  
